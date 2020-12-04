@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include("layouts/header") %>
+<body>
+<%- include('layouts/navbar') %>
+<div class="container">
+    <div style="text-align: center">
+<form action="/account/change/do" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="username">Username</label>
+    <input class="form-control" id="username" type="text" name="username" placeholder="Username" value="<%= user.username %>" required
+           minlength="1rs" maxlength="30">
+    </div>
+    <div>
+        <label for="firstname">Firstname</label>
+    <input id="firstname" class="form-control" type="text" name="firstname" placeholder="Firstname" value="<%= user.firstname %>" required
+           minlength="1rs" maxlength="50">
+    </div>
+    <div>
+        <label for="lastname">Lastname</label>
+    <input id="lastname" class="form-control" type="text" name="lastname" placeholder="Lastname" value="<%= user.lastname %>" required
+           minlength="1rs" maxlength="50">
+    </div>
+    <div>
+        <label for="email">Email</label>
+    <input id="email" class="form-control" type="email" name="email" placeholder="Email" value="<%= user.email %>" required
+           minlength="2rs" maxlength="50">
+    </div>
+    <br>
+    <input class="btn btn-primary" type="submit" value="Change">
+</form>
+</div>
+</div>
+<%- include('layouts/footer') %>
+</body>
+</html>

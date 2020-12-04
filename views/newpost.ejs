@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include("layouts/header") %>
+  <body>
+    <%- include('layouts/navbar') %>
+      <div class="container">
+         <h1 style="text-align: center">New Post</h1>
+         <div style="text-align: center">
+         <form action="/posts/store" method="POST" enctype="multipart/form-data" >
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" placeholder="Title" id="title" name="title" required minlength="2rs" maxlength="30">
+            </div>
+             <div>
+                 <label for="subtitle">Subtitle</label>
+                 <input type="text" class="form-control" placeholder="Subtitle" id="subtitle" name="subtitle" required minlength="2rs" maxlength="30">
+             </div>
+            <div>
+              <label for="body">Description</label>
+              <textarea rows="5" class="form-control" id="body" name="body"></textarea>
+            </div>
+            <div>
+              <label for="image">Image</label>
+              <input type="file" class="form-control" id="image" name="image">
+            </div>       
+          <br>                    
+          <div>
+            <button type="submit" id="sendMessageButton" class="btn btn-primary">Send</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    <%- include('layouts/footer') %>
+  </body>
+</html>
